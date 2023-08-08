@@ -1,24 +1,28 @@
-import { IGrammar, Registry } from "vscode-textmate";
+import type { IGrammar } from "vscode-textmate";
+import { Registry } from "./vscode-textmate";
 import {
   loadWASM,
   createOnigScanner,
   createOnigString,
-} from "vscode-oniguruma";
-// @ts-ignore
-import onig from "vscode-oniguruma/release/onig.wasm";
+} from "./vscode-oniguruma";
 import { aliasToLangData } from "./language";
 import { loadGrammarByScope } from "./grammars";
 import { LanguageAlias } from "./language-data";
 import { tokenizeWithScopes, tokenize } from "./tokenizer";
 import { FinalTheme } from "./theme";
 import { Token } from "./annotations";
+import onig from "./wasm";
 
 let registry: Registry | null = null;
+
+function isGramarless(lang: LanguageAlias) {
+  return lang == "text" || lang == "terminal";
+}
 
 export function preloadGrammars(languages: LanguageAlias[]) {
   // initialize the registry the first time
   if (!registry) {
-    const onigLibPromise = loadWASM(onig).then(() => ({
+    const onigLibPromise = loadWASM(onig as any).then(() => ({
       createOnigScanner,
       createOnigString,
     }));
@@ -29,7 +33,7 @@ export function preloadGrammars(languages: LanguageAlias[]) {
   }
 
   const promises = languages
-    .filter((alias) => alias != "text")
+    .filter((alias) => !isGramarless(alias))
     .map((alias) => {
       const langData = aliasToLangData(alias);
       if (!langData) {
@@ -45,9 +49,9 @@ export function getGrammar(alias: LanguageAlias): {
   langId: string;
   grammar: IGrammar | null;
 } {
-  if (alias == "text") {
+  if (isGramarless(alias)) {
     return {
-      langId: "text",
+      langId: alias,
       grammar: null,
     };
   }
@@ -72,7 +76,7 @@ export function getGrammar(alias: LanguageAlias): {
 
 function getGrammarFromRegistry(scopeName: string) {
   const { _syncRegistry } = registry as any;
-  return _syncRegistry?._grammars[scopeName] as IGrammar;
+  return _syncRegistry?._grammars.get(scopeName) as IGrammar;
 }
 
 export class UnknownLanguageError extends Error {
@@ -89,8 +93,19 @@ export function highlightTokens(
   theme: FinalTheme
 ) {
   registry.setTheme(theme);
-  const colorMap = registry.getColorMap();
+  const colorMap = getColorMap(theme);
   return tokenize(code, grammar, colorMap);
+}
+
+function getColorMap(theme: FinalTheme) {
+  const colorMap = registry.getColorMap();
+  if (!theme.colorNames) return colorMap;
+  return colorMap.map((c) => {
+    const key = Object.keys(theme.colorNames).find(
+      (key) => theme.colorNames[key].toUpperCase() === c.toUpperCase()
+    );
+    return key || c;
+  });
 }
 
 export function highlightTokensWithScopes(

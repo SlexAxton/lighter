@@ -1,5 +1,83 @@
 # @code-hike/lighter
 
+## 0.8.2
+
+### Patch Changes
+
+- 8ceee96: Add terminal highlighting
+
+## 0.8.1
+
+### Patch Changes
+
+- a9fae6e: Add activeBorderTop color
+
+## 0.8.0
+
+### Minor Changes
+
+- bf83084: Add edge bundle
+
+## 0.7.4
+
+### Patch Changes
+
+- 24563e6: Remove dynamic import from browser bundle
+
+## 0.7.3
+
+### Patch Changes
+
+- c676a69: Better mdx comment annotations
+
+  - remove `{}` after extracting the annotation
+
+## 0.7.2
+
+### Patch Changes
+
+- b701e70: Update grammars
+
+  - Update all grammars
+  - Add txt grammar for text with comments
+  - Add text to the list of LANG_NAMES
+
+## 0.7.1
+
+### Patch Changes
+
+- def601e: Add getThemeColorsSync
+
+## 0.7.0
+
+### Minor Changes
+
+- 9f4d748: Extract theme colors to a different function
+
+  Breaking Changes:
+
+  - `highlightWithScopes` removed, use `highlight` instead
+  - `annotatedHighlight` removed, use `highlight` instead
+  - `colors` removed from `highlight` result, now `style` is returned instead (only with `style.background` and `style.color` properties, the rest of the colors are returned by `getThemeColors` function)
+
+## 0.6.7
+
+### Patch Changes
+
+- 7257e74: Support css variables
+
+## 0.6.6
+
+### Patch Changes
+
+- 28d5da1: Fix frozen themes again
+
+## 0.6.5
+
+### Patch Changes
+
+- b797dc1: Fix error when theme is frozen
+
 ## 0.6.4
 
 ### Patch Changes

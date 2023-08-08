@@ -5,9 +5,10 @@ import {
   THEME_NAMES,
   preloadTheme,
   getTheme,
+  UnknownThemeError,
+  getAllThemeColors,
 } from "./theme";
 import { LanguageAlias, LanguageName, LANG_NAMES } from "./language-data";
-import { getThemeColors, ThemeColors } from "./theme-colors";
 import {
   highlightTokensWithScopes,
   highlightTokens,
@@ -26,26 +27,25 @@ import {
   Tokens,
   Token,
 } from "./annotations";
-
-class UnknownThemeError extends Error {
-  theme: string;
-  constructor(theme: string) {
-    super(`Unknown theme: ${theme}`);
-    this.theme = theme;
-  }
-}
+import { getTerminalStyle, highlightTerminal } from "./terminal";
 
 type Config = { scopes?: boolean };
 type AnnotatedConfig = { annotations: Annotation[] } & Config;
 type LighterResult = {
   lines: Token[][];
   lang: LanguageName;
-  colors: ThemeColors;
+  style: {
+    color: string;
+    background: string;
+  };
 };
 type AnnotatedLighterResult = {
   lines: Lines;
   lang: LanguageName;
-  colors: ThemeColors;
+  style: {
+    color: string;
+    background: string;
+  };
 };
 
 export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
@@ -62,7 +62,6 @@ export type {
   TokenGroup,
   Tokens,
   Token,
-  ThemeColors,
   LighterResult,
   AnnotatedLighterResult,
 };
@@ -142,44 +141,36 @@ export function highlightSync(
   const lines =
     langId == "text"
       ? highlightText(theCode)
+      : langId == "terminal"
+      ? highlightTerminal(theCode, theme)
       : config?.scopes
       ? highlightTokensWithScopes(theCode, grammar, theme)
       : highlightTokens(theCode, grammar, theme);
+
+  const style =
+    langId == "terminal"
+      ? getTerminalStyle(theme)
+      : {
+          color: theme.foreground,
+          background: theme.background,
+        };
 
   if (isAnnotatedConfig(config)) {
     const annotations = config?.annotations || [];
     return {
       lines: applyAnnotations(lines, annotations),
       lang: langId,
-      colors: getThemeColors(theme),
+      style,
     };
   } else {
     return {
       lines: lines,
       lang: langId,
-      colors: getThemeColors(theme),
+      style,
     };
   }
 }
 
-/** @deprecated use highlight instead */
-export async function highlightWithScopes(
-  code: string,
-  alias: LanguageAlias,
-  themeOrThemeName: Theme = "dark-plus"
-) {
-  return highlight(code, alias, themeOrThemeName, { scopes: true });
-}
-
-/** @deprecated use highlight instead */
-export async function annotatedHighlight(
-  code: string,
-  alias: LanguageAlias,
-  themeOrThemeName: Theme = "dark-plus",
-  annotations: Annotation[] = []
-) {
-  return highlight(code, alias, themeOrThemeName, { annotations });
-}
 export async function extractAnnotations(
   code: string,
   lang: LanguageAlias,
@@ -195,8 +186,29 @@ export async function extractAnnotations(
   const { newCode, annotations } = extractCommentsFromCode(
     code,
     grammar,
+    lang,
     annotationNames
   );
 
   return { code: newCode, annotations };
 }
+
+export async function getThemeColors(themeOrThemeName: Theme) {
+  if (!themeOrThemeName) {
+    throw new Error("Syntax highlighter error: undefined theme");
+  }
+
+  await preload([], themeOrThemeName);
+  const theme = getTheme(themeOrThemeName);
+  return getAllThemeColors(theme);
+}
+
+export function getThemeColorsSync(themeOrThemeName: Theme) {
+  if (!themeOrThemeName) {
+    throw new Error("Syntax highlighter error: undefined theme");
+  }
+  const theme = getTheme(themeOrThemeName);
+  return getAllThemeColors(theme);
+}
+
+export type LighterColors = ReturnType<typeof getThemeColors>;

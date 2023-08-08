@@ -1,5 +1,82 @@
 # lighter-web
 
+## 0.1.42
+
+### Patch Changes
+
+- Updated dependencies [8ceee96]
+  - @code-hike/lighter@0.8.2
+
+## 0.1.41
+
+### Patch Changes
+
+- Updated dependencies [a9fae6e]
+  - @code-hike/lighter@0.8.1
+
+## 0.1.40
+
+### Patch Changes
+
+- Updated dependencies [bf83084]
+  - @code-hike/lighter@0.8.0
+
+## 0.1.39
+
+### Patch Changes
+
+- Updated dependencies [24563e6]
+  - @code-hike/lighter@0.7.4
+
+## 0.1.38
+
+### Patch Changes
+
+- Updated dependencies [c676a69]
+  - @code-hike/lighter@0.7.3
+
+## 0.1.37
+
+### Patch Changes
+
+- Updated dependencies [b701e70]
+  - @code-hike/lighter@0.7.2
+
+## 0.1.36
+
+### Patch Changes
+
+- Updated dependencies [def601e]
+  - @code-hike/lighter@0.7.1
+
+## 0.1.35
+
+### Patch Changes
+
+- Updated dependencies [9f4d748]
+  - @code-hike/lighter@0.7.0
+
+## 0.1.34
+
+### Patch Changes
+
+- Updated dependencies [7257e74]
+  - @code-hike/lighter@0.6.7
+
+## 0.1.33
+
+### Patch Changes
+
+- Updated dependencies [28d5da1]
+  - @code-hike/lighter@0.6.6
+
+## 0.1.32
+
+### Patch Changes
+
+- Updated dependencies [b797dc1]
+  - @code-hike/lighter@0.6.5
+
 ## 0.1.31
 
 ### Patch Changes
