@@ -2,60 +2,60 @@
 
 export async function importGrammar(langId: string): Promise<any> {
   switch (langId) {
-    case "abap":
-      return import("tm-grammars/grammars/abap.json");
-    case "actionscript-3":
-      return import("tm-grammars/grammars/actionscript-3.json");
-    case "ada":
-      return import("tm-grammars/grammars/ada.json");
+    // case "abap":
+    //   return import("tm-grammars/grammars/abap.json");
+    // case "actionscript-3":
+    //   return import("tm-grammars/grammars/actionscript-3.json");
+    // case "ada":
+    //   return import("tm-grammars/grammars/ada.json");
     case "angular-html":
       return import("tm-grammars/grammars/angular-html.json");
     case "angular-ts":
       return import("tm-grammars/grammars/angular-ts.json");
     case "apache":
       return import("tm-grammars/grammars/apache.json");
-    case "apex":
-      return import("tm-grammars/grammars/apex.json");
-    case "apl":
-      return import("tm-grammars/grammars/apl.json");
+    // case "apex":
+    //   return import("tm-grammars/grammars/apex.json");
+    // case "apl":
+    //   return import("tm-grammars/grammars/apl.json");
     case "applescript":
       return import("tm-grammars/grammars/applescript.json");
-    case "ara":
-      return import("tm-grammars/grammars/ara.json");
-    case "asciidoc":
-      return import("tm-grammars/grammars/asciidoc.json");
+    // case "ara":
+    //   return import("tm-grammars/grammars/ara.json");
+    // case "asciidoc":
+    //   return import("tm-grammars/grammars/asciidoc.json");
     case "asm":
       return import("tm-grammars/grammars/asm.json");
     case "astro":
       return import("tm-grammars/grammars/astro.json");
     case "awk":
       return import("tm-grammars/grammars/awk.json");
-    case "ballerina":
-      return import("tm-grammars/grammars/ballerina.json");
+    // case "ballerina":
+    //   return import("tm-grammars/grammars/ballerina.json");
     case "bat":
       return import("tm-grammars/grammars/bat.json");
-    case "beancount":
-      return import("tm-grammars/grammars/beancount.json");
-    case "berry":
-      return import("tm-grammars/grammars/berry.json");
-    case "bibtex":
-      return import("tm-grammars/grammars/bibtex.json");
-    case "bicep":
-      return import("tm-grammars/grammars/bicep.json");
-    case "blade":
-      return import("tm-grammars/grammars/blade.json");
+    // case "beancount":
+    //   return import("tm-grammars/grammars/beancount.json");
+    // case "berry":
+    //   return import("tm-grammars/grammars/berry.json");
+    // case "bibtex":
+    //   return import("tm-grammars/grammars/bibtex.json");
+    // case "bicep":
+    //   return import("tm-grammars/grammars/bicep.json");
+    // case "blade":
+    //   return import("tm-grammars/grammars/blade.json");
     case "c":
       return import("tm-grammars/grammars/c.json");
-    case "cadence":
-      return import("tm-grammars/grammars/cadence.json");
-    case "clarity":
-      return import("tm-grammars/grammars/clarity.json");
+    // case "cadence":
+    //   return import("tm-grammars/grammars/cadence.json");
+    // case "clarity":
+    //   return import("tm-grammars/grammars/clarity.json");
     case "clojure":
       return import("tm-grammars/grammars/clojure.json");
     case "cmake":
       return import("tm-grammars/grammars/cmake.json");
-    case "cobol":
-      return import("tm-grammars/grammars/cobol.json");
+    // case "cobol":
+    //   return import("tm-grammars/grammars/cobol.json");
     case "codeowners":
       return import("tm-grammars/grammars/codeowners.json");
     case "codeql":
@@ -66,36 +66,36 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/common-lisp.json");
     case "cpp":
       return import("tm-grammars/grammars/cpp.json");
-    case "crystal":
-      return import("tm-grammars/grammars/crystal.json");
+    // case "crystal":
+    //   return import("tm-grammars/grammars/crystal.json");
     case "csharp":
       return import("tm-grammars/grammars/csharp.json");
     case "css":
       return import("tm-grammars/grammars/css.json");
     case "csv":
       return import("tm-grammars/grammars/csv.json");
-    case "cue":
-      return import("tm-grammars/grammars/cue.json");
-    case "cypher":
-      return import("tm-grammars/grammars/cypher.json");
+    // case "cue":
+    //   return import("tm-grammars/grammars/cue.json");
+    // case "cypher":
+    //   return import("tm-grammars/grammars/cypher.json");
     case "d":
       return import("tm-grammars/grammars/d.json");
     case "dart":
       return import("tm-grammars/grammars/dart.json");
-    case "dax":
-      return import("tm-grammars/grammars/dax.json");
-    case "desktop":
-      return import("tm-grammars/grammars/desktop.json");
+    // case "dax":
+    //   return import("tm-grammars/grammars/dax.json");
+    // case "desktop":
+    //   return import("tm-grammars/grammars/desktop.json");
     case "diff":
       return import("tm-grammars/grammars/diff.json");
     case "docker":
       return import("tm-grammars/grammars/docker.json");
     case "dotenv":
       return import("tm-grammars/grammars/dotenv.json");
-    case "dream-maker":
-      return import("tm-grammars/grammars/dream-maker.json");
-    case "edge":
-      return import("tm-grammars/grammars/edge.json");
+    // case "dream-maker":
+    //   return import("tm-grammars/grammars/dream-maker.json");
+    // case "edge":
+    //   return import("tm-grammars/grammars/edge.json");
     case "elixir":
       return import("tm-grammars/grammars/elixir.json");
     case "elm":
@@ -106,28 +106,28 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/erb.json");
     case "erlang":
       return import("tm-grammars/grammars/erlang.json");
-    case "fennel":
-      return import("tm-grammars/grammars/fennel.json");
+    // case "fennel":
+    //   return import("tm-grammars/grammars/fennel.json");
     case "fish":
       return import("tm-grammars/grammars/fish.json");
     case "fluent":
       return import("tm-grammars/grammars/fluent.json");
-    case "fortran-fixed-form":
-      return import("tm-grammars/grammars/fortran-fixed-form.json");
-    case "fortran-free-form":
-      return import("tm-grammars/grammars/fortran-free-form.json");
+    // case "fortran-fixed-form":
+    //   return import("tm-grammars/grammars/fortran-fixed-form.json");
+    // case "fortran-free-form":
+    //   return import("tm-grammars/grammars/fortran-free-form.json");
     case "fsharp":
       return import("tm-grammars/grammars/fsharp.json");
-    case "gdresource":
-      return import("tm-grammars/grammars/gdresource.json");
-    case "gdscript":
-      return import("tm-grammars/grammars/gdscript.json");
-    case "gdshader":
-      return import("tm-grammars/grammars/gdshader.json");
-    case "genie":
-      return import("tm-grammars/grammars/genie.json");
-    case "gherkin":
-      return import("tm-grammars/grammars/gherkin.json");
+    // case "gdresource":
+    //   return import("tm-grammars/grammars/gdresource.json");
+    // case "gdscript":
+    //   return import("tm-grammars/grammars/gdscript.json");
+    // case "gdshader":
+    //   return import("tm-grammars/grammars/gdshader.json");
+    // case "genie":
+    //   return import("tm-grammars/grammars/genie.json");
+    // case "gherkin":
+    //   return import("tm-grammars/grammars/gherkin.json");
     case "git-commit":
       return import("tm-grammars/grammars/git-commit.json");
     case "git-rebase":
@@ -138,8 +138,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/glimmer-js.json");
     case "glimmer-ts":
       return import("tm-grammars/grammars/glimmer-ts.json");
-    case "glsl":
-      return import("tm-grammars/grammars/glsl.json");
+    // case "glsl":
+    //   return import("tm-grammars/grammars/glsl.json");
     case "gnuplot":
       return import("tm-grammars/grammars/gnuplot.json");
     case "go":
@@ -174,8 +174,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/hxml.json");
     case "hy":
       return import("tm-grammars/grammars/hy.json");
-    case "imba":
-      return import("tm-grammars/grammars/imba.json");
+    // case "imba":
+    //   return import("tm-grammars/grammars/imba.json");
     case "ini":
       return import("tm-grammars/grammars/ini.json");
     case "java":
@@ -228,30 +228,30 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/markdown.json");
     case "marko":
       return import("tm-grammars/grammars/marko.json");
-    case "matlab":
-      return import("tm-grammars/grammars/matlab.json");
+    // case "matlab":
+    //   return import("tm-grammars/grammars/matlab.json");
     case "mdc":
       return import("tm-grammars/grammars/mdc.json");
     case "mdx":
       return import("tm-grammars/grammars/mdx.json");
-    case "mermaid":
-      return import("tm-grammars/grammars/mermaid.json");
+    // case "mermaid":
+    //   return import("tm-grammars/grammars/mermaid.json");
     case "mojo":
       return import("tm-grammars/grammars/mojo.json");
     case "move":
       return import("tm-grammars/grammars/move.json");
-    case "narrat":
-      return import("tm-grammars/grammars/narrat.json");
-    case "nextflow":
-      return import("tm-grammars/grammars/nextflow.json");
+    // case "narrat":
+    //   return import("tm-grammars/grammars/narrat.json");
+    // case "nextflow":
+    //   return import("tm-grammars/grammars/nextflow.json");
     case "nginx":
       return import("tm-grammars/grammars/nginx.json");
     case "nim":
       return import("tm-grammars/grammars/nim.json");
     case "nix":
       return import("tm-grammars/grammars/nix.json");
-    case "nushell":
-      return import("tm-grammars/grammars/nushell.json");
+    // case "nushell":
+    //   return import("tm-grammars/grammars/nushell.json");
     case "objective-c":
       return import("tm-grammars/grammars/objective-c.json");
     case "objective-cpp":
@@ -264,14 +264,14 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/perl.json");
     case "php":
       return import("tm-grammars/grammars/php.json");
-    case "plsql":
-      return import("tm-grammars/grammars/plsql.json");
+    // case "plsql":
+    //   return import("tm-grammars/grammars/plsql.json");
     case "po":
       return import("tm-grammars/grammars/po.json");
     case "postcss":
       return import("tm-grammars/grammars/postcss.json");
-    case "powerquery":
-      return import("tm-grammars/grammars/powerquery.json");
+    // case "powerquery":
+    //   return import("tm-grammars/grammars/powerquery.json");
     case "powershell":
       return import("tm-grammars/grammars/powershell.json");
     case "prisma":
@@ -284,34 +284,34 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/pug.json");
     case "puppet":
       return import("tm-grammars/grammars/puppet.json");
-    case "purescript":
-      return import("tm-grammars/grammars/purescript.json");
+    // case "purescript":
+    //   return import("tm-grammars/grammars/purescript.json");
     case "python":
       return import("tm-grammars/grammars/python.json");
-    case "qml":
-      return import("tm-grammars/grammars/qml.json");
-    case "qmldir":
-      return import("tm-grammars/grammars/qmldir.json");
+    // case "qml":
+    //   return import("tm-grammars/grammars/qml.json");
+    // case "qmldir":
+    //   return import("tm-grammars/grammars/qmldir.json");
     case "qss":
       return import("tm-grammars/grammars/qss.json");
     case "r":
       return import("tm-grammars/grammars/r.json");
     case "racket":
       return import("tm-grammars/grammars/racket.json");
-    case "raku":
-      return import("tm-grammars/grammars/raku.json");
-    case "razor":
-      return import("tm-grammars/grammars/razor.json");
+    // case "raku":
+    //   return import("tm-grammars/grammars/raku.json");
+    // case "razor":
+    //   return import("tm-grammars/grammars/razor.json");
     case "reg":
       return import("tm-grammars/grammars/reg.json");
     case "regexp":
       return import("tm-grammars/grammars/regexp.json");
     case "rel":
       return import("tm-grammars/grammars/rel.json");
-    case "riscv":
-      return import("tm-grammars/grammars/riscv.json");
-    case "rst":
-      return import("tm-grammars/grammars/rst.json");
+    // case "riscv":
+    //   return import("tm-grammars/grammars/riscv.json");
+    // case "rst":
+    //   return import("tm-grammars/grammars/rst.json");
     case "ruby":
       return import("tm-grammars/grammars/ruby.json");
     case "rust":
@@ -326,8 +326,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/scheme.json");
     case "scss":
       return import("tm-grammars/grammars/scss.json");
-    case "shaderlab":
-      return import("tm-grammars/grammars/shaderlab.json");
+    // case "shaderlab":
+    //   return import("tm-grammars/grammars/shaderlab.json");
     case "shellscript":
       return import("tm-grammars/grammars/shellscript.json");
     case "shellsession":
@@ -354,8 +354,8 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/svelte.json");
     case "swift":
       return import("tm-grammars/grammars/swift.json");
-    case "system-verilog":
-      return import("tm-grammars/grammars/system-verilog.json");
+    // case "system-verilog":
+    //   return import("tm-grammars/grammars/system-verilog.json");
     case "systemd":
       return import("tm-grammars/grammars/systemd.json");
     case "tasl":
@@ -392,20 +392,20 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/v.json");
     case "vala":
       return import("tm-grammars/grammars/vala.json");
-    case "vb":
-      return import("tm-grammars/grammars/vb.json");
-    case "verilog":
-      return import("tm-grammars/grammars/verilog.json");
-    case "vhdl":
-      return import("tm-grammars/grammars/vhdl.json");
+    // case "vb":
+    //   return import("tm-grammars/grammars/vb.json");
+    // case "verilog":
+    //   return import("tm-grammars/grammars/verilog.json");
+    // case "vhdl":
+    //   return import("tm-grammars/grammars/vhdl.json");
     case "viml":
       return import("tm-grammars/grammars/viml.json");
     case "vue":
       return import("tm-grammars/grammars/vue.json");
     case "vue-html":
       return import("tm-grammars/grammars/vue-html.json");
-    case "vyper":
-      return import("tm-grammars/grammars/vyper.json");
+    // case "vyper":
+    //   return import("tm-grammars/grammars/vyper.json");
     case "wasm":
       return import("tm-grammars/grammars/wasm.json");
     case "wenyan":
@@ -414,16 +414,16 @@ export async function importGrammar(langId: string): Promise<any> {
       return import("tm-grammars/grammars/wgsl.json");
     case "wikitext":
       return import("tm-grammars/grammars/wikitext.json");
-    case "wolfram":
-      return import("tm-grammars/grammars/wolfram.json");
+    // case "wolfram":
+    //   return import("tm-grammars/grammars/wolfram.json");
     case "xml":
       return import("tm-grammars/grammars/xml.json");
     case "xsl":
       return import("tm-grammars/grammars/xsl.json");
     case "yaml":
       return import("tm-grammars/grammars/yaml.json");
-    case "zenscript":
-      return import("tm-grammars/grammars/zenscript.json");
+    // case "zenscript":
+    //   return import("tm-grammars/grammars/zenscript.json");
     case "zig":
       return import("tm-grammars/grammars/zig.json");
     default:
