@@ -1,37 +1,37 @@
 import {
-  Theme,
-  StringTheme,
-  RawTheme,
-  THEME_NAMES,
-  preloadTheme,
-  getTheme,
-  UnknownThemeError,
-  getAllThemeColors,
-} from "./theme";
-import { LanguageAlias, LanguageName, LANG_NAMES } from "./language-data";
-import {
-  highlightTokensWithScopes,
-  highlightTokens,
-  UnknownLanguageError,
-  getGrammar,
-  preloadGrammars,
-  highlightText,
-} from "./highlighter";
+  applyAnnotations,
+  Line,
+  LineGroup,
+  Lines,
+  Token,
+  TokenGroup,
+  Tokens,
+} from "./annotations";
 import {
   Annotation,
   AnnotationExtractor,
   extractCommentsFromCode,
 } from "./comments";
 import {
-  applyAnnotations,
-  Lines,
-  LineGroup,
-  Line,
-  TokenGroup,
-  Tokens,
-  Token,
-} from "./annotations";
+  getGrammar,
+  highlightText,
+  highlightTokens,
+  highlightTokensWithScopes,
+  preloadGrammars,
+  UnknownLanguageError,
+} from "./highlighter";
+import { LANG_NAMES, LanguageAlias, LanguageName } from "./language-data";
 import { getTerminalStyle, highlightTerminal } from "./terminal";
+import {
+  getAllThemeColors,
+  getTheme,
+  preloadTheme,
+  RawTheme,
+  StringTheme,
+  Theme,
+  THEME_NAMES,
+  UnknownThemeError,
+} from "./theme";
 
 type Config = { scopes?: boolean };
 type AnnotatedConfig = { annotations: Annotation[] } & Config;
@@ -52,22 +52,22 @@ type AnnotatedLighterResult = {
   };
 };
 
-export { UnknownLanguageError, UnknownThemeError, THEME_NAMES, LANG_NAMES };
+export { LANG_NAMES, THEME_NAMES, UnknownLanguageError, UnknownThemeError };
 
 export type {
-  LanguageAlias,
-  Theme,
-  StringTheme,
-  RawTheme,
+  AnnotatedLighterResult,
   Annotation,
-  Lines,
-  LineGroup,
+  LanguageAlias,
+  LighterResult,
   Line,
+  LineGroup,
+  Lines,
+  RawTheme,
+  StringTheme,
+  Theme,
+  Token,
   TokenGroup,
   Tokens,
-  Token,
-  LighterResult,
-  AnnotatedLighterResult,
 };
 
 function isAnnotatedConfig(
@@ -95,7 +95,7 @@ export async function highlight(
 export async function highlight(
   code: string,
   lang: LanguageAlias,
-  themeOrThemeName: Theme = "dark-plus",
+  themeOrThemeName: Theme = "base16",
   config: Config | AnnotatedConfig = {}
 ) {
   const theCode = code || "";
@@ -126,7 +126,7 @@ export function highlightSync(
 export function highlightSync(
   code: string,
   lang: LanguageAlias,
-  themeOrThemeName: Theme = "dark-plus",
+  themeOrThemeName: Theme = "base16",
   config: Config | AnnotatedConfig = {}
 ) {
   const theCode = code || "";

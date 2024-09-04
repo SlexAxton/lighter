@@ -1,23 +1,23 @@
+import { expectTypeOf, test } from "vitest";
 import {
+  AnnotatedLighterResult,
   highlight,
-  preload,
   highlightSync,
   LighterResult,
-  AnnotatedLighterResult,
+  preload,
 } from "../src";
-import { expectTypeOf, test } from "vitest";
 
 test("highlight sync types", async () => {
-  await preload(["typescript"], "dark-plus");
+  await preload(["typescript"], "base16");
   const notAnnotatedResult = highlightSync(
     "const x = 1;",
     "typescript",
-    "dark-plus"
+    "base16"
   );
   const annotatedResult = highlightSync(
     "const x = 1;",
     "typescript",
-    "dark-plus",
+    "base16",
     {
       annotations: [],
     }
@@ -31,13 +31,13 @@ test("highlight types", async () => {
   const notAnnotatedResult = await highlight(
     "const x = 1;",
     "typescript",
-    "dark-plus",
+    "base16",
     {}
   );
   const annotatedResult = await highlight(
     "const x = 1;",
     "typescript",
-    "dark-plus",
+    "base16",
     {
       annotations: [],
     }

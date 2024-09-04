@@ -433,60 +433,6 @@ export async function importGrammar(langId: string): Promise<any> {
 
 export async function importTheme(name: string): Promise<any> {
   switch (name) {
-    case "dark-plus":
-      return import("../themes/dark-plus.json");
-    case "dracula-soft":
-      return import("../themes/dracula-soft.json");
-    case "dracula":
-      return import("../themes/dracula.json");
-    case "github-dark-dimmed":
-      return import("../themes/github-dark-dimmed.json");
-    case "github-dark":
-      return import("../themes/github-dark.json");
-    case "github-from-css":
-      return import("../themes/github-from-css.json");
-    case "github-light":
-      return import("../themes/github-light.json");
-    case "light-plus":
-      return import("../themes/light-plus.json");
-    case "material-darker":
-      return import("../themes/material-darker.json");
-    case "material-default":
-      return import("../themes/material-default.json");
-    case "material-from-css":
-      return import("../themes/material-from-css.json");
-    case "material-lighter":
-      return import("../themes/material-lighter.json");
-    case "material-ocean":
-      return import("../themes/material-ocean.json");
-    case "material-palenight":
-      return import("../themes/material-palenight.json");
-    case "min-dark":
-      return import("../themes/min-dark.json");
-    case "min-light":
-      return import("../themes/min-light.json");
-    case "monokai":
-      return import("../themes/monokai.json");
-    case "nord":
-      return import("../themes/nord.json");
-    case "one-dark-pro":
-      return import("../themes/one-dark-pro.json");
-    case "poimandres":
-      return import("../themes/poimandres.json");
-    case "rose-pine-dawn":
-      return import("../themes/rose-pine-dawn.json");
-    case "rose-pine-moon":
-      return import("../themes/rose-pine-moon.json");
-    case "rose-pine":
-      return import("../themes/rose-pine.json");
-    case "slack-dark":
-      return import("../themes/slack-dark.json");
-    case "slack-ochin":
-      return import("../themes/slack-ochin.json");
-    case "solarized-dark":
-      return import("../themes/solarized-dark.json");
-    case "solarized-light":
-      return import("../themes/solarized-light.json");
     default:
       throw new Error("no theme for " + name);
   }
