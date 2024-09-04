@@ -1,4 +1,4 @@
-import { highlight } from "@code-hike/lighter";
+import { highlight } from "@imownbey/lighter";
 
 let code = `
 [42m [30mastro[39m [0m  [32;1mv2.9.2[0m [1mLaunch sequence.[18B[40D[0m[?2004h

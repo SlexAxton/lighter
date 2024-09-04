@@ -1,4 +1,4 @@
-import { highlight } from "@code-hike/lighter";
+import { highlight } from "@imownbey/lighter";
 
 const theme = "dracula";
 
