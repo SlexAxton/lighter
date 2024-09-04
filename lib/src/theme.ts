@@ -1,4 +1,3 @@
-import { readTheme } from "./file-system";
 import { fetchJSON } from "./network";
 import { getColor, getColorScheme } from "./theme-colors";
 
@@ -37,9 +36,10 @@ export function getTheme(theme: Theme): FinalTheme {
   return toFinalTheme(rawTheme);
 }
 
+const base16 = import("./../themes/base16.json");
 async function reallyLoadThemeByName(name: StringTheme): Promise<RawTheme> {
   try {
-    return await readTheme(name);
+    return base16;
   } catch (e) {
     return await fetchJSON(`themes/${name}`);
   }
@@ -171,32 +171,7 @@ export type FinalTheme = {
   colorNames?: { [key: string]: string };
 };
 
-export const THEME_NAMES = [
-  "dark-plus",
-  "dracula-soft",
-  "dracula",
-  "github-dark",
-  "github-dark-dimmed",
-  "github-from-css",
-  "github-light",
-  "light-plus",
-  "material-darker",
-  "material-default",
-  "material-from-css",
-  "material-lighter",
-  "material-ocean",
-  "material-palenight",
-  "min-dark",
-  "min-light",
-  "monokai",
-  "nord",
-  "one-dark-pro",
-  "poimandres",
-  "slack-dark",
-  "slack-ochin",
-  "solarized-dark",
-  "solarized-light",
-] as const;
+export const THEME_NAMES = ["base16"] as const;
 type NamesTuple = typeof THEME_NAMES;
 export type StringTheme = NamesTuple[number];
 
