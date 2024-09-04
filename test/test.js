@@ -1,4 +1,4 @@
-import { highlight } from "@code-hike/lighter";
+import { highlight } from "@imownbey/lighter";
 
 // highlight("const x", "js").then((tokens) => {
 //   console.log("default", JSON.stringify(tokens));

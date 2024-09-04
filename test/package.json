@@ -4,6 +4,6 @@
   "type": "module",
   "version": "0.1.48",
   "dependencies": {
-    "@code-hike/lighter": "1.0.0"
+    "@imownbey/lighter": "1.0.0"
   }
 }
